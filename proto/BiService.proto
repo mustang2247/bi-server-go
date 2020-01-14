@@ -1,0 +1,34 @@
+syntax = "proto3";
+//import "google/protobuf/any.proto";
+import "Common.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bi.biservice";
+option java_outer_classname = "BiServerService";
+
+package BiService;
+
+// bi 服务大厅
+service BiService {
+  // 安装 只能报送一次
+  rpc Install (CommonRequest) returns (CommonResponse) {}
+  // 启动 打开应用
+  rpc StartUp (CommonRequest) returns (CommonResponse) {}
+  // 注册
+  rpc Register (CommonRequest) returns (CommonResponse) {}
+  // 登陆
+  rpc Login (CommonRequest) returns (CommonResponse) {}
+  // 支付
+  rpc Payment (CommonRequest) returns (CommonResponse) {}
+  // 虚拟交易 经济系统
+  rpc Economy (CommonRequest) returns (CommonResponse) {}
+  // 添加用户
+  rpc AddUser (CommonRequest) returns (CommonResponse) {}
+  // 任务及副本系统
+  rpc Quest (CommonRequest) returns (CommonResponse) {}
+  // 自定义 处理 表等
+  rpc Event (CommonRequest) returns (CommonResponse) {}
+  // 心跳 在线统计
+  rpc Heartbeat (CommonRequest) returns (CommonResponse) {}
+}
+
